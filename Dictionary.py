@@ -38,7 +38,7 @@ E1.pack(side = LEFT)
 # writing function to find words
 def function():
     # getting user input
-    a = E1.get()
+    a = E1.get().lower()
 
     # defining words using Dictionary words using dictionary
     dict = {'consider':'Deem to be',
@@ -96,7 +96,7 @@ def function():
             'wander' : 'move or cause to move in a sinuous or circular course',
             'insist' : 'be emphatic or resolute and refuse to budge',
             'knight' : 'a person of noble birth trained to arms and chivalry',
-            'convince' : 'make realize the truth or validity of somethin',
+            'convince' : 'make realize the truth or validity of something',
             'inspire' : 'serve as the inciting cause of'
 
             }
@@ -104,11 +104,11 @@ def function():
 
     if (E1.get() != ''): # input is empty or not
 
-        if E1.get() in dict.keys(): # input key is exists or not
-            tkMessageBox.showinfo("Simple Python Dictionary",  "Word: "+ E1.get() + "\nMeaning: "+ dict[a.lower()])
+        if a in dict.keys(): # input key is exists or not
+            tkMessageBox.showinfo("Simple Python Dictionary",  "Word: "+ E1.get() + "\nMeaning: "+ dict[a])
 
         else: # key is not on the list
-            tkMessageBox.showinfo("Simple Python Dictionary", "Word not found", icon='error')
+            tkMessageBox.showinfo("Simple Python Dictionary", "Word not found" , icon='error')
 
     else: # input is empty
         tkMessageBox.showinfo("Simple Python Dictionary", "Type word and try again", icon='warning')
